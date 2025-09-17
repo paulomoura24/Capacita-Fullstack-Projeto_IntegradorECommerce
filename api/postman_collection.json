@@ -8,21 +8,13 @@
   "item": [
     {
       "name": "Health",
-      "request": {
-        "method": "GET",
-        "url": "{{baseUrl}}/health"
-      }
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
     },
     {
       "name": "Auth - Register",
       "request": {
         "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
           "raw": "{\"name\": \"Cliente\", \"email\": \"cliente@example.com\", \"password\": \"123456\", \"role\": \"CLIENT\"}"
@@ -45,12 +37,7 @@
       ],
       "request": {
         "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
           "raw": "{\"email\": \"cliente@example.com\", \"password\": \"123456\"}"
@@ -62,59 +49,58 @@
       "name": "Users - Me",
       "request": {
         "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          }
-        ],
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
         "url": "{{baseUrl}}/users/me"
       }
     },
     {
-      "name": "Products - List",
+      "name": "Users - List (ADMIN)",
       "request": {
         "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": "{{baseUrl}}/users"
+      }
+    },
+    {
+      "name": "Products - List",
+      "request": { "method": "GET", "url": "{{baseUrl}}/products" }
+    },
+    {
+      "name": "Products - Get by ID",
+      "request": { "method": "GET", "url": "{{baseUrl}}/products/1" }
+    },
+    {
+      "name": "Products - Get Image by ID",
+      "request": { "method": "GET", "url": "{{baseUrl}}/products/1/image" }
+    },
+    {
+      "name": "Products - Create (JSON com imageBase64)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"W59 Mini\",\n  \"description\": \"Smartwatch compacto.\",\n  \"price\": 199.90,\n  \"stock\": 20,\n  \"imageBase64\": \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAuMB9o3xq2sAAAAASUVORK5CYII=\",\n  \"imageMime\": \"image/png\",\n  \"imageName\": \"pixel.png\"\n}"
+        },
         "url": "{{baseUrl}}/products"
       }
     },
     {
-      "name": "Products - Create",
+      "name": "Products - Update (JSON com imageBase64 opcional)",
       "request": {
-        "method": "POST",
+        "method": "PUT",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          }
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
         ],
         "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "title",
-              "value": "W59 Mini"
-            },
-            {
-              "key": "description",
-              "value": "Smartwatch compacto."
-            },
-            {
-              "key": "price",
-              "value": "199.90"
-            },
-            {
-              "key": "stock",
-              "value": "20"
-            },
-            {
-              "key": "image",
-              "type": "file",
-              "src": []
-            }
-          ]
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"W59 Mini (atualizado)\",\n  \"price\": 189.90,\n  \"stock\": 30,\n  \"imageBase64\": null,\n  \"imageMime\": null,\n  \"imageName\": null\n}"
         },
-        "url": "{{baseUrl}}/products"
+        "url": "{{baseUrl}}/products/1"
       }
     },
     {
@@ -122,14 +108,8 @@
       "request": {
         "method": "POST",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
         ],
         "body": {
           "mode": "raw",
@@ -137,17 +117,19 @@
         },
         "url": "{{baseUrl}}/orders"
       }
+    },
+    {
+      "name": "Orders - List (meus)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": "{{baseUrl}}/orders"
+      }
     }
   ],
   "event": [],
   "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:3000"
-    },
-    {
-      "key": "token",
-      "value": ""
-    }
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "token", "value": "" }
   ]
 }
