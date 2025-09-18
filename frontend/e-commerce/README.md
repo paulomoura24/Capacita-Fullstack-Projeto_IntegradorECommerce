@@ -1,12 +1,96 @@
-# React + Vite
+# 🖋️ Papelaria Pó de Giz
+![banner](/src/imagem/capa.png)
+Projeto Final do Modulo **Desenvolvimento Fullstack Intermediário** – Programa **Capacita Brasil**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📚 Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A **Papelaria Pó de Giz** é uma aplicação web desenvolvida como projeto final do curso Fullstack Intermediário.  
+O sistema simula uma loja de papelaria moderna, com foco em uma experiência de navegação agradável, intuitiva e eficiente para o usuário.
 
-## Expanding the ESLint configuration
+Este projeto aplica conceitos fundamentais do desenvolvimento web moderno, como:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Criação de interfaces com React
+- Navegação entre páginas com React Router
+- Componentização e reaproveitamento de código
+- Estilização com CSS modular
+
+---
+
+## 💡 Objetivos
+
+- Criar uma interface funcional para exibição de produtos de papelaria
+- Simular a jornada de compra do usuário (catálogo, detalhes, carrinho)
+- Finalizar um projeto completo e responsivo para apresentação
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Frontend
+
+- React.js  
+- React Router DOM   
+- CSS3  
+- HTML5  
+
+### Outros
+
+- Vite (ou Create React App)  
+- Git e GitHub  
+
+---
+
+## 🚀 Como Executar o Projeto
+### 📦 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- [Node.js](https://nodejs.org/) (versão recomendada: 18+)
+- [Vite](https://vitejs.dev/) (instalado via `npm`)
+- Um gerenciador de pacotes: `npm` ou `yarn`
+
+### ⚙️ Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/PROJETO-TRILHA-FULLSTACK.git
+   cd PROJETO-TRILHA-FULLSTACK
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+   ## Equipe - Papelaria
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/carlosrodrigues07">
+        <img src="https://avatars.githubusercontent.com/u/127802040?v=4" width="100px;" alt="Carlos Henrique"/><br>
+        <sub>
+          <b>Carlos Henrique Rodrigues Paixao</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/DimasGabriel1">
+        <img src="https://avatars.githubusercontent.com/u/208731600?v=4" width="100px;" alt="Dimas Gabirel"/><br>
+        <sub>
+          <b>Dimas Gabriel</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/paulomoura24">
+        <img src="https://avatars.githubusercontent.com/u/187982740?v=4" width="100px;" alt="Rubens Lima"/><br>
+        <sub>
+          <b>Paulo Moura</b>
+        </sub>
+      </a>
+    </td>
+    </td>
+      </tr>
+</table>

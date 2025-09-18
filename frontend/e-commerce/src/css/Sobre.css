@@ -1,0 +1,71 @@
+.sobre-container {
+  max-width: 960px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: #cdddec; /* tom claro e suave */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color: #1e293b;
+  line-height: 1.75;
+  text-align: justify;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Título principal */
+.sobre-container h1 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #0f172a;
+  font-weight: 700;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+/* Parágrafos */
+.sobre-container p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: #334155;
+}
+
+.sobre-container strong {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Imagem */
+.sobre-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.sobre-image:hover {
+  transform: scale(1.01);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .sobre-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .sobre-container p {
+    font-size: 1rem;
+  }
+
+  .sobre-image {
+    max-height: 240px;
+  }
+}
