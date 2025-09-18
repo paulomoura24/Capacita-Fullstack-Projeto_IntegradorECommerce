@@ -29,7 +29,7 @@ model Product {
   id          Int       @id @default(autoincrement())
   title       String
   description String
-  price       Decimal    @db.Numeric(12, 2)
+  price       Decimal    @db.Decimal(12, 2)
   stock       Int        @default(0)
   image       Bytes 
   imageMime   String
@@ -46,7 +46,7 @@ model Order {
   id         Int         @id @default(autoincrement())
   userId     Int
   user       User        @relation(fields: [userId], references: [id])
-  total      Decimal     @db.Numeric(12, 2)
+  total      Decimal     @db.Decimal(12, 2)
   status     String      @default("CREATED")
   createdAt  DateTime    @default(now())
   items      OrderItem[]
@@ -59,7 +59,7 @@ model OrderItem {
   orderId   Int
   productId Int
   quantity  Int
-  unitPrice Decimal  @db.Numeric(12, 2)
+  unitPrice Decimal  @db.Decimal(12, 2)
   order     Order    @relation(fields: [orderId], references: [id])
   product   Product  @relation(fields: [productId], references: [id])
 }
@@ -69,7 +69,7 @@ model Payment {
   orderId     Int      @unique
   order       Order    @relation(fields: [orderId], references: [id])
   status      String   // APPROVED | DECLINED
-  amount      Decimal  @db.Numeric(12, 2)
+  amount      Decimal  @db.Decimal(12, 2)
   method      String   @default("FAKE_CREDIT_CARD")
   holderName  String
   cardLast4   String

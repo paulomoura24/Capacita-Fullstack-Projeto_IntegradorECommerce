@@ -13,7 +13,7 @@ cp .env.example .env
 # edite DATABASE_URL e JWT_SECRET
 npm install
 npx prisma generate
-npm run migrate:dev
+npx prisma migrate dev --name init
 npm run seed
 npm run dev
 ```

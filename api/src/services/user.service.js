@@ -7,3 +7,9 @@ export async function getMe(userId) {
   });
   return user;
 }
+
+export async function listUsers() {
+  return prisma.user.findMany({
+    select: { id: true, name: true, email: true, role: true, createdAt: true }
+  });
+}
