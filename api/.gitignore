@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-node_modules
-=======
 # Node
 ./api/node_modules/
 ./api/prisma/migrations/
@@ -53,4 +50,3 @@ nyc_output/
 *.zip
 *.tar
 *.tgz
->>>>>>> c20e918e2697a078daed7af01876803503dbe6ef
