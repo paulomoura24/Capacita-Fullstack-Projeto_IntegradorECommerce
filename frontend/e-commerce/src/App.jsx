@@ -1,34 +1,37 @@
+// src/App.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "/src/pages/Home";
-import ProductDetails from "/src/pages/ProductDetails";
-import Cart from "/src/pages/Card.jsx";
-import Header from "/src/components/Header";
-import Footer from "/src/components/Footer";
-import Sobre from "/src/pages/Sobre"
-import { CartProvider } from "/src/context/CardContext";
+import { AuthProvider } from "./context/AuthContext";
+import Navbar from "./components/Navbar";
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Products from "./pages/Products";
+import ProductForm from "./pages/ProductForm";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import ClientPanel from "./pages/ClientPanel";
+import SellerPanel from "./pages/SellerPanel";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-function App() {
+export default function App() {
   return (
-    <CartProvider>
+    <AuthProvider>
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/produto/:id" element={<ProductDetails />} />
-              <Route path="/carrinho" element={<Cart />} />
-              <Route path="/sobre"  element={<Sobre />} />
-            </Routes>
-          </main>
-
-          <Footer />
-        </div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/new" element={<ProductForm />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/client" element={<ClientPanel />} />
+          <Route path="/seller" element={<SellerPanel />} />
+          <Route path="/client" element={<ProtectedRoute role="cliente"><ClientPanel /></ProtectedRoute>} />
+          <Route path="/seller" element={<ProtectedRoute role="vendedor"><SellerPanel /></ProtectedRoute>} />
+        </Routes>
       </BrowserRouter>
-    </CartProvider>
+    </AuthProvider>
   );
 }
-
-export default App;
