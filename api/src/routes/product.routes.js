@@ -1,15 +1,16 @@
-import { Router } from 'express';
-import { authRequired, requireRole } from '../middlewares/auth.js';
-import * as ctrl from '../controllers/product.controller.js';
-import { uploadImage } from '../middlewares/upload.js';
+import { Router } from 'express'
+import * as productCtrl from '../controllers/product.controller.js'
+import { authRequired, requireRole } from '../middlewares/auth.js'
+import { uploadImage } from '../middlewares/upload.js'
 
-const r = Router();
-r.get('/', ctrl.list);
-r.get('/:id', ctrl.getById);
-r.get('/:id/image', ctrl.image);
+const router = Router()
 
-r.post('/', authRequired, requireRole('VENDOR','ADMIN'), uploadImage, ctrl.create);
-r.put('/:id', authRequired, requireRole('VENDOR','ADMIN'), uploadImage, ctrl.update);
-r.delete('/:id', authRequired, requireRole('VENDOR','ADMIN'), ctrl.remove);
+router.get('/', productCtrl.list)
+router.get('/:id', productCtrl.getById)
+router.get('/:id/image', productCtrl.image)
 
-export default r;
+router.post('/', authRequired, requireRole('ADMIN'), uploadImage, productCtrl.create)
+router.put('/:id', authRequired, requireRole('ADMIN'), uploadImage, productCtrl.update)
+router.delete('/:id', authRequired, requireRole('ADMIN'), productCtrl.remove)
+
+export default router
