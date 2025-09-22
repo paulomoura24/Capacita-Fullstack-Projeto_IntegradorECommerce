@@ -155,22 +155,24 @@ export async function getMyOrders(userId) {
   });
 }
 
-export async function getOrderById(userId, id) {
-  const order = await prisma.order.findFirst({
-    where: { id: Number(id), userId },
+export async function getOrderById({ id, userId, isAdmin }) {
+  if (!id || !Number.isInteger(id)) {
+    throw new Error('Order id is required (integer)')
+  }
+
+  const where = isAdmin ? { id } : { id, userId }
+
+  return prisma.order.findFirst({
+    where,
     include: {
       items: {
         include: {
-          product: { select: { title: true } }
+          product: {
+            select: { title: true }
+          }
         }
       },
       payment: true
     }
-  });
-  if (!order) {
-    const err = new Error('Pedido não encontrado');
-    err.status = 404;
-    throw err;
-  }
-  return order;
+  })
 }

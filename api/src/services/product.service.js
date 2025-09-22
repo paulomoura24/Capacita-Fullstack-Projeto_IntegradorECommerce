@@ -46,16 +46,32 @@ export async function updateProduct(id, data, requester) {
 
 export async function listProducts() {
   return prisma.product.findMany({
-    where: { active: true },
-    select: { id: true, title: true, price: true, stock: true, ownerId: true, createdAt: true }
-  });
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      price: true,
+      stock: true,
+      ownerId: true,
+      createdAt: true,
+    },
+    orderBy: { createdAt: 'desc' },
+  })
 }
 
 export async function getProduct(id) {
   return prisma.product.findUnique({
-    where: { id },
-    select: { id: true, title: true, description: true, price: true, stock: true, ownerId: true, createdAt: true }
-  });
+    where: { id: Number(id) },
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      price: true,
+      stock: true,
+      ownerId: true,
+      createdAt: true,
+    },
+  })
 }
 
 export async function getProductImage(id) {

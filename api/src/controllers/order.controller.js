@@ -20,8 +20,21 @@ export async function listMy(req, res) {
   res.json({ orders });
 }
 
-export async function getOne(req, res) {
-  const id = Number(req.params.id);
-  const order = await orderService.getOrderById(req.user.sub, id);
-  res.json({ order });
+export async function getOne(req, res, next) {
+  try {
+    const id = Number(req.params.id)
+    if (!Number.isInteger(id) || id <= 0) {
+      return res.status(400).json({ error: 'Invalid order id' })
+    }
+
+    const userId = req.user.id
+    const role = req.user.role
+    const isAdmin = role === 'ADMIN'
+
+    const order = await orderService.getOrderById({ id, userId, isAdmin })
+    if (!order) return res.status(404).json({ error: 'Order not found' })
+    return res.json(order)
+  } catch (err) {
+    next(err)
+  }
 }
