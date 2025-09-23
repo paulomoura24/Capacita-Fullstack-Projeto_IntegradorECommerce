@@ -1,10 +1,10 @@
 # Capacita-Fullstack-Projeto_IntegradorECommerce
 
-## 💡Visão Geral
+## 💡 Visão Geral
 
 Este projeto é um E-Commerce completo, desenvolvido como Projeto Integrador do programa Capacita Fullstack, com o objetivo de proporcionar uma aplicação web robusta para simulação de um ambiente real de comércio eletrônico. O sistema foi pensado para integrar as competências de front-end e back-end adquiridas durante a formação.
 
-## ⚙️Funcionalidades
+## ⚙️ Funcionalidades
 
 - Catálogo dinâmico de produtos (CRUD)
 - Carrinho de compras e checkout com validação de cartão fictício (Luhn)
@@ -15,7 +15,7 @@ Este projeto é um E-Commerce completo, desenvolvido como Projeto Integrador do 
 - Histórico de pedidos e gerenciamento de status
 - Interface responsiva e experiência aprimorada para o usuário
 
-## Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 
 ### Front-end
 
@@ -55,7 +55,7 @@ prisma/
 - **PNPM/NPM**: gerenciamento de pacotes.
 - **Migrations e Seeders**: versionamento de banco e dados iniciais.
 
-## Como Executar
+## ▶️ Como Executar
 
 ### Backend
 
@@ -97,17 +97,17 @@ prisma/
    npm run dev
    ```
 
-## Estrutura de Perfis e Permissões
+## 👤 Estrutura de Perfis e Permissões
 
 - **CLIENT**: pode criar e visualizar seus próprios pedidos.
 - **VENDOR**: pode criar, editar e remover produtos que são seus.
 - **ADMIN**: acesso total ao sistema, incluindo gestão completa de produtos e pedidos.
 
-## Licença
+## 📄 Licença
 
 MIT
 
-## Colaboradores - Equipe - Papelaria
+## 🤝 Colaboradores - Equipe - Papelaria
 
 <table>
   <tr>
