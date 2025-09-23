@@ -1,10 +1,10 @@
 # Capacita-Fullstack-Projeto_IntegradorECommerce
 
-## Visão Geral
+## 💡Visão Geral
 
 Este projeto é um E-Commerce completo, desenvolvido como Projeto Integrador do programa Capacita Fullstack, com o objetivo de proporcionar uma aplicação web robusta para simulação de um ambiente real de comércio eletrônico. O sistema foi pensado para integrar as competências de front-end e back-end adquiridas durante a formação.
 
-## Funcionalidades
+## ⚙️Funcionalidades
 
 - Catálogo dinâmico de produtos (CRUD)
 - Carrinho de compras e checkout com validação de cartão fictício (Luhn)
