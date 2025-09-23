@@ -1,6 +1,3 @@
 import app from './app.js'
-import { config } from './config/env.js'
-
-app.listen(config.port, () => {
-  console.log(`API running on http://localhost:${config.port}`)
-})
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`API running on http://localhost:${port}`))
