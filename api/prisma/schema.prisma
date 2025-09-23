@@ -1,11 +1,14 @@
+// prisma/schema.prisma
+
 generator client {
   provider      = "prisma-client-js"
   binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // use o host -pooler aqui (runtime)
+  directUrl = env("DIRECT_URL") // use o host sem -pooler aqui (migrations)
 }
 
 enum Role {
@@ -15,64 +18,64 @@ enum Role {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   name      String
-  email     String   @unique
+  email     String    @unique
   password  String
-  role      Role     @default(CLIENT)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  role      Role      @default(CLIENT)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   orders    Order[]
   products  Product[] @relation("UserProducts")
 }
 
 model Product {
-  id          Int       @id @default(autoincrement())
+  id          Int         @id @default(autoincrement())
   title       String
   description String
-  price       Decimal    @db.Decimal(12, 2)
-  stock       Int        @default(0)
-  image       Bytes 
+  price       Decimal     @db.Decimal(12, 2)
+  stock       Int         @default(0)
+  image       Bytes
   imageMime   String
   imageName   String
-  active      Boolean    @default(true)
+  active      Boolean     @default(true)
   ownerId     Int?
-  owner       User?      @relation("UserProducts", fields: [ownerId], references: [id])
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  owner       User?       @relation("UserProducts", fields: [ownerId], references: [id])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
   orderItems  OrderItem[]
 }
 
 model Order {
-  id         Int         @id @default(autoincrement())
-  userId     Int
-  user       User        @relation(fields: [userId], references: [id])
-  total      Decimal     @db.Decimal(12, 2)
-  status     String      @default("CREATED")
-  createdAt  DateTime    @default(now())
-  items      OrderItem[]
-  payment    Payment?
+  id              Int         @id @default(autoincrement())
+  userId          Int
+  user            User        @relation(fields: [userId], references: [id])
+  total           Decimal     @db.Decimal(12, 2)
+  status          String      @default("CREATED")
+  createdAt       DateTime    @default(now())
+  items           OrderItem[]
+  payment         Payment?
   shippingAddress String
 }
 
 model OrderItem {
-  id        Int      @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   orderId   Int
   productId Int
   quantity  Int
-  unitPrice Decimal  @db.Decimal(12, 2)
-  order     Order    @relation(fields: [orderId], references: [id])
-  product   Product  @relation(fields: [productId], references: [id])
+  unitPrice Decimal @db.Decimal(12, 2)
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
 }
 
 model Payment {
-  id          Int      @id @default(autoincrement())
-  orderId     Int      @unique
-  order       Order    @relation(fields: [orderId], references: [id])
-  status      String   // APPROVED | DECLINED
-  amount      Decimal  @db.Decimal(12, 2)
-  method      String   @default("FAKE_CREDIT_CARD")
-  holderName  String
-  cardLast4   String
-  createdAt   DateTime @default(now())
+  id         Int      @id @default(autoincrement())
+  orderId    Int      @unique
+  order      Order    @relation(fields: [orderId], references: [id])
+  status     String // APPROVED | DECLINED
+  amount     Decimal  @db.Decimal(12, 2)
+  method     String   @default("FAKE_CREDIT_CARD")
+  holderName String
+  cardLast4  String
+  createdAt  DateTime @default(now())
 }
