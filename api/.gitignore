@@ -23,7 +23,6 @@ lerna-debug.log*
 # Prisma
 prisma/dev.db
 prisma/test.db
-prisma/migrations/
 
 # Build
 dist/
