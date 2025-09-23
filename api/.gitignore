@@ -1,6 +1,5 @@
 # Node
 ./api/node_modules/
-./api/prisma/migrations/
 node_modules/
 npm-debug.log*
 yarn-debug.log*
