@@ -107,4 +107,45 @@ prisma/
 
 MIT
 
----
+## Colaboradores - Equipe - Papelaria
+
+<table>
+  <tr>
+    <td align="center">
+       <a href="https://github.com/paulomoura24">
+        <img src="https://avatars.githubusercontent.com/u/187982740?v=4" width="100px;" alt="Rubens Lima"/><br>
+        <sub>
+          <b>Paulo Moura</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/wesleycosta061203">
+        <img src="https://avatars.githubusercontent.com/u/62311070?s=64&v=4" width="100px;" alt="Dimas Gabirel"/><br>
+        <sub>
+          <b>Wesley Costa</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/LucasCLima-dev">
+        <img src="https://avatars.githubusercontent.com/u/177546715?s=64&v=4" width="100px;" alt="Rubens Lima"/><br>
+        <sub>
+          <b>LucasCLima</b>
+        </sub>
+      </a>
+    </td>
+    <td  align="center">
+      <a href="https://github.com/DimasGabriel1">
+        <img src="https://avatars.githubusercontent.com/u/208731600?s=64&v=4" width="100px;" alt="Rubens Lima"/><br>
+        <sub>
+          <b>DimasGabriel</b>
+        </sub>
+      </a>
+    </td>
+    </td>
+      </tr>
+
+
+
+
