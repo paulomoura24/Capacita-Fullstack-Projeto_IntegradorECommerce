@@ -143,6 +143,14 @@ MIT
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/thyagooof">
+        <img src="https://avatars.githubusercontent.com/u/104254821?v=4" width="100px;" alt="thyago.of"/><br>
+        <sub>
+          <b>thyago.of</b>
+        </sub>
+      </a>
+    </td>
     </td>
       </tr>
 
